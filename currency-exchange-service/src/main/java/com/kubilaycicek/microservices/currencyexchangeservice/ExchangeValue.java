@@ -1,12 +1,25 @@
 package com.kubilaycicek.microservices.currencyexchangeservice;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Transient;
 import java.math.BigDecimal;
 
+@Entity
+
 public class ExchangeValue {
+
+    @Id
     private Long id;
+    @Column(name = "currency_from")
     private String from;
+
+    @Column(name = "currency_to")
     private String to;
+    @Column(name = "conversion_multiple")
     private BigDecimal conversionMultiple;
+    @Column(name = "port")
     private int port;
 
     public ExchangeValue(){}
@@ -56,5 +69,16 @@ public class ExchangeValue {
 
     public void setPort(int port) {
         this.port = port;
+    }
+
+    @Override
+    public String toString() {
+        return "ExchangeValue{" +
+                "id=" + id +
+                ", from='" + from + '\'' +
+                ", to='" + to + '\'' +
+                ", conversionMultiple=" + conversionMultiple +
+                ", port=" + port +
+                '}';
     }
 }
