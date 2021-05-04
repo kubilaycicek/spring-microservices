@@ -3,7 +3,6 @@ package com.kubilaycicek.microservices.currencyexchangeservice;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.Transient;
 import java.math.BigDecimal;
 
 @Entity
